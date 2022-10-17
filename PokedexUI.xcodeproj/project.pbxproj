@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		3E43C35A288A380000CE34A1 /* PokedexUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43C359288A380000CE34A1 /* PokedexUIApp.swift */; };
-		3E43C35C288A380000CE34A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43C35B288A380000CE34A1 /* ContentView.swift */; };
+		3E43C35C288A380000CE34A1 /* CreaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43C35B288A380000CE34A1 /* CreaturesView.swift */; };
 		3E43C35E288A380100CE34A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E43C35D288A380100CE34A1 /* Assets.xcassets */; };
 		3E43C361288A380100CE34A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E43C360288A380100CE34A1 /* Preview Assets.xcassets */; };
+		3E43C368288A381C00CE34A1 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43C367288A381C00CE34A1 /* Creature.swift */; };
+		3E43C36A288A384100CE34A1 /* Creatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43C369288A384100CE34A1 /* Creatures.swift */; };
+		3E43C36C288AE37200CE34A1 /* CreatureDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43C36B288AE37200CE34A1 /* CreatureDetail.swift */; };
+		3E43C36E288AE5AE00CE34A1 /* CreatureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E43C36D288AE5AE00CE34A1 /* CreatureDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E43C356288A380000CE34A1 /* PokedexUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E43C359288A380000CE34A1 /* PokedexUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexUIApp.swift; sourceTree = "<group>"; };
-		3E43C35B288A380000CE34A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3E43C35B288A380000CE34A1 /* CreaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreaturesView.swift; sourceTree = "<group>"; };
 		3E43C35D288A380100CE34A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E43C360288A380100CE34A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3E43C367288A381C00CE34A1 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
+		3E43C369288A384100CE34A1 /* Creatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creatures.swift; sourceTree = "<group>"; };
+		3E43C36B288AE37200CE34A1 /* CreatureDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureDetail.swift; sourceTree = "<group>"; };
+		3E43C36D288AE5AE00CE34A1 /* CreatureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				3E43C359288A380000CE34A1 /* PokedexUIApp.swift */,
-				3E43C35B288A380000CE34A1 /* ContentView.swift */,
+				3E43C367288A381C00CE34A1 /* Creature.swift */,
+				3E43C369288A384100CE34A1 /* Creatures.swift */,
+				3E43C36B288AE37200CE34A1 /* CreatureDetail.swift */,
+				3E43C35B288A380000CE34A1 /* CreaturesView.swift */,
+				3E43C36D288AE5AE00CE34A1 /* CreatureDetailView.swift */,
 				3E43C35D288A380100CE34A1 /* Assets.xcassets */,
 				3E43C35F288A380100CE34A1 /* Preview Content */,
 			);
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E43C35C288A380000CE34A1 /* ContentView.swift in Sources */,
+				3E43C36A288A384100CE34A1 /* Creatures.swift in Sources */,
+				3E43C35C288A380000CE34A1 /* CreaturesView.swift in Sources */,
+				3E43C36C288AE37200CE34A1 /* CreatureDetail.swift in Sources */,
 				3E43C35A288A380000CE34A1 /* PokedexUIApp.swift in Sources */,
+				3E43C36E288AE5AE00CE34A1 /* CreatureDetailView.swift in Sources */,
+				3E43C368288A381C00CE34A1 /* Creature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
