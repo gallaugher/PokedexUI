@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Creature: Hashable, Codable {
-//    var id = UUID()
+struct Creature: Hashable, Codable, Identifiable {
+    let id = UUID().uuidString
     var name: String
     var url: String
 }

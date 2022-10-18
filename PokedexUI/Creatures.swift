@@ -60,6 +60,10 @@ class Creatures: ObservableObject {
         }
     }
     
+    func checkIfLast(creature: Creature) {
+        print("**** COULD CALL checkIfLast! ***")
+    }
+    
     func shouldLoad(index: Int) {
         
         if index == self.creatureArray.count-1 && self.urlString.hasPrefix("http") {

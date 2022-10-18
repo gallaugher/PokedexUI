@@ -12,20 +12,32 @@ struct CreaturesView: View {
     
     var body: some View {
         NavigationStack{
-            List {
-                ForEach(0..<creatures.creatureArray.count, id: \.self) { index in
+            List(creatures.creatureArray) { creature in
+                LazyVStack {
                     NavigationLink {
-                        CreatureDetailView(creature: creatures.creatureArray[index])
+                        CreatureDetailView(creature: creature)
                     } label: {
-                        Text("\(index+1). \(creatures.creatureArray[index].name)")
-                            .onAppear() {
-                                // Was hoping that I could tell when I'm looking at the last element of the creaturesArray, and if so, I'd call to reload
-                                print("\(index+1). \(creatures.creatureArray[index].name)")
-                                creatures.shouldLoad(index: index)
-                            }
+                        Text("\(creature.name)")
                     }
                 }
-                .font(.title2)
+                .onAppear() {
+                    if let lastPoke = creatures.creatureArray.last {
+                        if creature.id == lastPoke.id && creatures.urlString.hasPrefix("https") {
+                            Task {
+                                await creatures.getData()
+                            }
+                        }
+                    }
+                }
+                //                if let lastPoke = creatures.creatureArray.last {
+                //                    if creature.id == lastPoke.id && creatures.urlString.hasPrefix("https") {
+                ////                        ProgressView()
+                //                        Text("")
+                //                            .task {
+                //                                await creatures.getData()
+                //                            }
+                //                    }
+                //                }
             }
             .listStyle(.plain)
             .navigationTitle("Pokemon")
@@ -44,12 +56,39 @@ struct CreaturesView: View {
                 }
             }
             .task {
-                // I see that this calls every time I return from DetailView. It's not terrible that it does this, but it's unintended. I had intended to only load one page at a time when I scroll to the last element of creaturesArray OR load them all if the Load All button is pressed. Can I limit this so that it executes only once when the CreaturesDetail first shows? I suppose I could call it in the init of Creatures, instead.
                 await creatures.getData()
             }
         }
     }
+    
+    func checkIfLast(creature: Creature) {
+        print("*** I can call this ***")
+    }
 }
+
+//struct ListView: View {
+//    @EnvironmentObject var creatures: Creatures
+//
+//    var body: some View {
+//        List(creatures.creatureArray) {creature in
+//            NavigationLink {
+//                CreatureDetailView(creature: creature)
+//            } label: {
+//                Text("\(creature.name)")
+//            }
+//            checkIfLast(creature: creature)
+//        }
+//    }
+//
+//    func checkIfLast(creature: Creature) {
+//        guard let lastPokemon = creatures.creatureArray.last else {
+//            return
+//        }
+//        if lastPokemon.id == creature.id {
+//            print("*** The last creature is \(creature.name) ***")
+//        }
+//    }
+//}
 
 struct ContentView_Previews: PreviewProvider {
     
